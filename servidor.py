@@ -1,7 +1,8 @@
 # coding=utf-8
+import time
 import socket
 import sys
-from JogoDaMemoria import EstadoJogo, ManipulaTabuleiro
+from JogoDaMemoria import EstadoJogo
 
 # Cria o socket TCP/IP
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -106,12 +107,12 @@ while True:
                 estado.removePeca(tabuleiro, i1, j1)
                 estado.removePeca(tabuleiro, i2, j2)
 
-                estado.time.sleep(5)
+                time.sleep(5)
             else:
 
                 print "Pecas nao casam!"
 
-                estado.time.sleep(3)
+                time.sleep(3)
 
                 estado.fechaPeca(tabuleiro, i1, j1)
                 estado.fechaPeca(tabuleiro, i2, j2)
